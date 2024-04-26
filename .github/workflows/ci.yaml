@@ -1,6 +1,6 @@
 name: ci-go-sonarcloud
 on:
-  pull_request:
+  push:
     branches:
       - develop
 
@@ -14,5 +14,3 @@ jobs:
           go-version: 1.22.1
       - run: go test
       - run: go run sum.go
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
